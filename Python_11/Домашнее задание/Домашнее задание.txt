@@ -1,0 +1,18 @@
+1. Напишите lambda-функцию, которая принимает список словарей (каждый словарь представляет собой информацию о студенте: имя, оценки по математике и английскому) и возвращает список имен студентов, у которых средний балл выше 80.
+students = [
+    {'name': 'Alice', 'math': [random.randint(70, 90) for _ in range(3)], 'english': [random.randint(70, 90) for _ in range(3)]},
+    {'name': 'Bob', 'math': [random.randint(70, 90) for _ in range(3)], 'english': [random.randint(70, 90) for _ in range(3)]},
+    {'name': 'Eve', 'math': [random.randint(70, 90) for _ in range(3)], 'english': [random.randint(70, 90) for _ in range(3)]}
+]
+
+2. Напишите lambda-функцию, которая принимает список словарей (каждый словарь представляет собой информацию о товаре: название, цена, количество) и возвращает общую стоимость всех товаров.
+products = [
+    {'name': 'Apple', 'price': 1.5, 'quantity': 10},
+    {'name': 'Banana', 'price': 0.75, 'quantity': 20},
+    {'name': 'Cherry', 'price': 2, 'quantity': 5}
+]
+С таким словарем ответ должен быть: 42.5
+
+3. Напишите lambda-функцию, которая принимает список строк и возвращает словарь, где ключами являются слова, а значениями - количество их повторений в списке.
+word_list = ["apple", "banana", "apple", "cherry", "banana", "apple"]
+С таким словарем ответ должен быть: {'cherry': 1, 'banana': 2, 'apple': 3}

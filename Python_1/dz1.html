@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        #input, #output {
+            width: 45%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <textarea id="input" placeholder="Введите JSON здесь"></textarea>
+        <div id="output"></div>
+    </div>
+    <button onclick="formatJSON()">Отформатировать</button>
+    <div id="error"></div>
+
+    <script>
+        function formatJSON() {
+            const input = document.getElementById('input').value;
+            let parsedData;
+            try {
+                parsedData = JSON.parse(input);
+                document.getElementById('error').textContent = '';
+            } catch (error) {
+                document.getElementById('error').textContent = 'Ошибка: введенные данные не являются валидным JSON';
+                return;
+            }
+            const formattedJSON = JSON.stringify(parsedData, null, 4);
+            document.getElementById('output').innerHTML = '<pre>' + formattedJSON + '</pre>';
+        }
+    </script>
+</body>
+</html>
